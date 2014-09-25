@@ -30,3 +30,47 @@ HOST: http://data.iotsdk.com
               "createdAt": "2011-08-20T02:06:57.931Z",
               "objectId": "Ed1nuqPvcm"
             }
+
+## Classes [/1/classes/{className}{?where,limit,skip,order,keys}]
+
++ Parameters
+    + className (required, string, `Game`)
+    + where (optional, string, `{"playerName": "Bob"}`)
+    + limit (optional, number, `20`)
+    + skip (optional, number, `0`)
+    + order (optional, string, `+score`)
+    + keys (optional, string, `name,score`)
+
+### Querying Objects [GET]
+
++ Request (application/json)
+
+    + Header
+    
+            X-XPG-Application-Id: {appid}
+            X-XPG-REST-API-Key: {appkey}
+
++ Response (application/json)
+
+    + Body
+    
+            {
+              "results": [
+                {
+                  "playerName": "Jang Min Chul",
+                  "updatedAt": "2011-08-19T02:24:17.787Z",
+                  "cheatMode": false,
+                  "createdAt": "2011-08-19T02:24:17.787Z",
+                  "objectId": "A22v5zRAgd",
+                  "score": 80075
+                },
+                {
+                  "playerName": "Sean Plott",
+                  "updatedAt": "2011-08-21T18:02:52.248Z",
+                  "cheatMode": false,
+                  "createdAt": "2011-08-20T02:06:57.931Z",
+                  "objectId": "Ed1nuqPvcm",
+                  "score": 73453
+                }
+              ]
+            }
