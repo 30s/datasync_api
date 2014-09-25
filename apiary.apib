@@ -1,47 +1,32 @@
 FORMAT: 1A
-HOST: http://www.google.com
+HOST: http://data.iotsdk.com
 
-# datasyncAPI
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+# Datasync API
 
-# Group Notes
-Notes related resources of the **Notes API**
-
-## Notes Collection [/notes]
-### List all Notes [GET]
-+ Response 200 (application/json)
-
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
-
-### Create a Note [POST]
-+ Request (application/json)
-
-        { "title": "Buy cheese and bread for breakfast." }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
+## Classes [/1/classes/{className}]
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+    + className (required, string, `Game`)
 
-### Retrieve a Note [GET]
-+ Response 200 (application/json)
+### Creating Objects [POST]
+
++ Request (application/json)
 
     + Header
-
-            X-My-Header: The Value
+    
+            X-XPG-Application-Id: {appid}
+            X-XPG-REST-API-Key: {appkey}
+            Content-Type: application/json
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            {}
 
-### Remove a Note [DELETE]
-+ Response 204
++ Response 201 (application/json)
+
+    + Body
+    
+            {
+              "createdAt": "2011-08-20T02:06:57.931Z",
+              "objectId": "Ed1nuqPvcm"
+            }
